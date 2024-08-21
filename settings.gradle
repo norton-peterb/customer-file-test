@@ -1,0 +1,4 @@
+rootProject.name = 'customer-file-test'
+include 'customer-file-load'
+include 'customer-file-model'
+include 'customer-file-svcs'
