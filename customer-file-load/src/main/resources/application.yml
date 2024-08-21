@@ -1,0 +1,4 @@
+customer:
+  file:
+    service:
+      url: ${CUSTOMER_FILE_SERVICE_URL:http://localhost:9090/customer/save}
