@@ -79,4 +79,10 @@ public class StringCalculatorTest {
         Assertions.assertEquals(6, result);
     }
 
+    @Test
+    void test_Step8_MultipleDelimiters() {
+        int result = new StringCalculator().add("//[|][%]\n1|2%3");
+        Assertions.assertEquals(6, result);
+    }
+
 }
