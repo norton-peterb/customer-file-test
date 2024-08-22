@@ -23,4 +23,16 @@ public class StringCalculatorTest {
         Assertions.assertEquals(3,result);
     }
 
+    @Test
+    void test_Step2_ThreeNumbers() {
+        int result = new StringCalculator().add("1,2,3");
+        Assertions.assertEquals(6, result);
+    }
+
+    @Test
+    void test_Step2_MoreNumbers() {
+        int result = new StringCalculator().add("1,2,3,5,8");
+        Assertions.assertEquals(19, result);
+    }
+
 }
