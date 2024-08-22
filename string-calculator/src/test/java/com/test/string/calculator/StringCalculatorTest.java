@@ -41,4 +41,10 @@ public class StringCalculatorTest {
         Assertions.assertEquals(6, result);
     }
 
+    @Test
+    void test_Step4_CustomDelimiter() {
+        int result = new StringCalculator().add("//;\n1;2");
+        Assertions.assertEquals(3, result);
+    }
+
 }
