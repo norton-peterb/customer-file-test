@@ -73,4 +73,10 @@ public class StringCalculatorTest {
         Assertions.assertEquals(2, result);
     }
 
+    @Test
+    void test_Step7_DelimiterGreaterThanOneCharacter() {
+        int result = new StringCalculator().add("//[|||]\n1|||2|||3");
+        Assertions.assertEquals(6, result);
+    }
+
 }

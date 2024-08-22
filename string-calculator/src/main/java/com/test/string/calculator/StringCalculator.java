@@ -3,7 +3,6 @@ package com.test.string.calculator;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StringCalculator {
 
@@ -35,6 +34,10 @@ public class StringCalculator {
             if(numbers.charAt(0) == '/' && numbers.charAt(1) == '/') {
                delimiter = numbers.substring(2, numbers.indexOf("\n"));
                numbers = numbers.substring(numbers.indexOf("\n") + 1);
+            }
+            if(delimiter.length() > 1) {
+                delimiter = delimiter.replace("[","").replace("]","")
+                        .replace("|","\\|");
             }
             String[] tokens = numbers.replace("\n",delimiter).split(delimiter);
             List<Integer> numberList = new LinkedList<>();
