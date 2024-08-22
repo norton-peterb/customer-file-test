@@ -35,4 +35,10 @@ public class StringCalculatorTest {
         Assertions.assertEquals(19, result);
     }
 
+    @Test
+    void test_Step3_NewLineInNumbers() {
+        int result = new StringCalculator().add("1\n2,3");
+        Assertions.assertEquals(6, result);
+    }
+
 }

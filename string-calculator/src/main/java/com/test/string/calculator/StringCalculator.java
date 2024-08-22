@@ -6,7 +6,7 @@ public class StringCalculator {
         if(numbers.isBlank()) {
             return 0;
         } else {
-            String[] tokens = numbers.split(",");
+            String[] tokens = numbers.replace("\n",",").split(",");
             int result = 0;
             for(String token : tokens) {
                 result += Integer.parseInt(token);
