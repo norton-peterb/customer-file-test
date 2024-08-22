@@ -40,7 +40,10 @@ public class StringCalculator {
             List<Integer> numberList = new LinkedList<>();
             Arrays.stream(tokens).forEach(number -> numberList.add(Integer.parseInt(number)));
             negativeNumberCheck(numberList);
-            return numberList.stream().mapToInt(Integer::intValue).sum();
+            return numberList
+                    .stream()
+                    .filter(number -> number <= 1000)
+                    .mapToInt(Integer::intValue).sum();
         }
     }
 }

@@ -67,4 +67,10 @@ public class StringCalculatorTest {
                 exception.getMessage());
     }
 
+    @Test
+    void test_Step6_BiggerThanAThousand() {
+        int result = new StringCalculator().add("1001,2");
+        Assertions.assertEquals(2, result);
+    }
+
 }
