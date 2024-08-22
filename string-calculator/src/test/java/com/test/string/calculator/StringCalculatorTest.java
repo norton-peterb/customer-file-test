@@ -3,6 +3,8 @@ package com.test.string.calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class StringCalculatorTest {
 
     @Test
@@ -45,6 +47,24 @@ public class StringCalculatorTest {
     void test_Step4_CustomDelimiter() {
         int result = new StringCalculator().add("//;\n1;2");
         Assertions.assertEquals(3, result);
+    }
+
+    @Test
+    void test_Step5_NegativeNumbersOne() {
+        StringCalculatorException exception =
+                assertThrows(StringCalculatorException.class,
+                        () -> new StringCalculator().add("-1,2"));
+        Assertions.assertEquals("Negatives not allowed: -1",
+                exception.getMessage());
+    }
+
+    @Test
+    void test_Step5_NegativeNumbersMoreThanOne() {
+        StringCalculatorException exception =
+                assertThrows(StringCalculatorException.class,
+                        () -> new StringCalculator().add("2,-4,3,-5"));
+        Assertions.assertEquals("Negatives not allowed: -4,-5",
+                exception.getMessage());
     }
 
 }
